@@ -4,6 +4,7 @@ import os
 import csv
 
 RUNNER_DIR = "./Running/runners"
+DATA_FILE = "./Running/runners.dat"
 
 
 class RunnerRoute(Resource):
@@ -20,8 +21,9 @@ class RunnerRoute(Resource):
                 runner = {"name": runner_file[:-7], "runs": [], "total_ran": 0}
 
                 for run in csv_reader:
-                    runner["total_ran"] += int(run["Distance"])
+                    runner["total_ran"] += float(run["Distance"])
                     runner["runs"].append(run)
+                runner["runs"].reverse()
                 runners.append(runner)
         return runners
 
@@ -60,7 +62,9 @@ class RunRoute(Resource):
     def post(self, runner_name):
         try:
             run_date = request.form['Date']
-            run_length = request.form['Distance']
+            run_length = float(request.form['Distance'])
+            if run_date is None or run_length is None or run_length < 0:
+                raise "None date or length"
             with open(f'{RUNNER_DIR}/{runner_name}.runner', "a") \
                     as runner_file:
                 fields = ["Date", "Distance"]
@@ -72,6 +76,8 @@ class RunRoute(Resource):
         except Exception as err:
             print(err)
             return make_response("Missing date or distance", 400)
+
+        return make_response("Successfully made run", 201)
 
 
 class DeleteRunRoute(Resource):
@@ -103,3 +109,5 @@ class DeleteRunRoute(Resource):
         except Exception as err:
             print(err)
             return make_response("Missing date or distance", 400)
+
+        return make_response("Deleted run", 200)

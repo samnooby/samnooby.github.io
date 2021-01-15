@@ -11,11 +11,16 @@ export default new Vuex.Store({
     runners: [],
     total_ran: 0,
     current_runner: { total_ran: -1 },
+    goal: 1000000,
+    num_runners: 0,
   },
   mutations: {
     //addRunner adds a new runner to the state
     addRunner(state, runners) {
       state.runners = state.runners.concat(runners);
+      runners.forEach((runner) => {
+        state.total_ran += parseFloat(runner.total_ran);
+      });
     },
     //setRunner sets the current runner to the passed in runner
     setCurrentRunner(state, runner) {
@@ -23,22 +28,25 @@ export default new Vuex.Store({
       state.current_runner = runner;
     },
     addRun(state, run) {
-      state.current_runner.total_ran += parseInt(run.Distance);
+      state.current_runner.total_ran += parseFloat(run.Distance);
+      state.total_ran += parseFloat(run.Distance);
       state.current_runner.runs.push(run);
       console.log(state.current_runner);
     },
-    setRuns(state, runs) {
-      var run;
+    addRuns(state, runs) {
+      state.total_ran -= state.current_runner.total_ran;
+      state.current_runner.total_ran = 0;
+      state.current_runner.runs = runs;
+      console.log(runs);
+      for (var i = 0; i < runs.length; i++) {
+        state.current_runner.total_ran =
+          state.current_runner.total_ran + parseFloat(runs[i].Distance);
+      }
+      state.total_ran += state.current_runner.total_ran;
+    },
+    resetState(state) {
       state.current_runner.total_ran = 0;
       state.current_runner.runs = [];
-      console.log("Here");
-      console.log(state.current_runner);
-      for (run of runs) {
-        console.log(run);
-        state.current_runner.total_ran += run.Distance;
-        state.current_runner.runs.push(run);
-        console.log(state.current_runner);
-      }
     },
   },
   actions: {
@@ -94,13 +102,27 @@ export default new Vuex.Store({
         )
         .then((resp) => {
           console.log(resp);
-          commit("setRuns", resp.data);
+          commit("addRuns", resp.data);
+        });
+    },
+    getRunnerData({ commit }) {
+      axios
+        .get(BASE_URL + "/run")
+        .then((resp) => {
+          console.log(resp);
+          commit("setupRunnerData", resp.data);
+        })
+        .catch((err) => {
+          console.log(err);
         });
     },
   },
   getters: {
     currentRunner(state) {
       return state.runners[state.current_runner];
+    },
+    percentToGoal(state) {
+      return (state.total_ran / state.goal) * 100;
     },
   },
   modules: {},

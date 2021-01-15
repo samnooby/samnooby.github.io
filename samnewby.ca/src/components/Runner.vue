@@ -26,7 +26,9 @@ export default {
     selectRunner() {
       this.$store.commit("setCurrentRunner", this.runner);
       console.log("Hiding runners");
-      this.$emit("hideRunners");
+      if (window.innerWidth < 600) {
+        this.$emit("hideRunners");
+      }
     },
   },
   computed: {

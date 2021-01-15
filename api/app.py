@@ -1,7 +1,8 @@
 from flask import Flask
 from flask_restful import Api
 from flask_cors import CORS
-from Running.MomRunning import RunnerRoute, RunRoute, DeleteRunRoute
+from Running.MomRunning import RunnerRoute, RunRoute,\
+    DeleteRunRoute
 
 
 app = Flask(__name__)
