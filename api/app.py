@@ -14,4 +14,4 @@ api.add_resource(RunRoute, "/runs/<string:runner_name>")
 api.add_resource(DeleteRunRoute, "/runs/<string:runner_name>/delete")
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8888)
+    app.run(port=8888)

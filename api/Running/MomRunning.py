@@ -30,8 +30,6 @@ class RunnerRoute(Resource):
     def post(self):
         try:
             runner_name = request.form['name']
-            print(f'{runner_name}.runner')
-            print(os.listdir(RUNNER_DIR))
             if f'{runner_name}.runner' in os.listdir(RUNNER_DIR):
                 return make_response("Runner already exists", 400)
             with open(f'{RUNNER_DIR}/{runner_name}.runner', mode="w")\
@@ -40,8 +38,7 @@ class RunnerRoute(Resource):
                 writer = csv.DictWriter(new_runner_file, fieldnames=fieldnames)
 
                 writer.writeheader()
-        except Exception as exp:
-            print(exp)
+        except Exception:
             return make_response("Could not create runner", 400)
 
         return make_response("Successfully made runner", 201)
@@ -55,8 +52,8 @@ class RunRoute(Resource):
                     as runner_file:
                 for row in runner_file:
                     runs.append(row)
-        except Exception as err:
-            print(err)
+        except Exception:
+            pass
         return runs
 
     def post(self, runner_name):
@@ -70,11 +67,9 @@ class RunRoute(Resource):
                 fields = ["Date", "Distance"]
                 writer = csv.DictWriter(runner_file, fields)
                 writer.writerow({"Date": run_date, "Distance": run_length})
-        except IOError as err:
-            print(err)
+        except IOError:
             return make_response("User does not exist", 400)
-        except Exception as err:
-            print(err)
+        except Exception:
             return make_response("Missing date or distance", 400)
 
         return make_response("Successfully made run", 201)
@@ -95,7 +90,6 @@ class DeleteRunRoute(Resource):
                         row["Distance"] != run_length) and \
                             row["Date"] != "Date":
                         new_rows.append(row)
-            print(new_rows)
             with open(f'{RUNNER_DIR}/{runner_name}.runner', "w") \
                     as runner_file:
                 writer = csv.DictWriter(runner_file, fields)
@@ -103,11 +97,9 @@ class DeleteRunRoute(Resource):
                 for row in new_rows:
                     writer.writerow(row)
             return new_rows
-        except IOError as err:
-            print(err)
+        except IOError:
             return make_response("User does not exist", 400)
-        except Exception as err:
-            print(err)
+        except Exception:
             return make_response("Missing date or distance", 400)
 
         return make_response("Deleted run", 200)
