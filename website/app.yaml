@@ -1,0 +1,18 @@
+runtime: nodejs10
+
+service: website
+
+env_variables:
+  NODE_ENV: 'production'
+  GOOGLE_APPLICATION_CREDENTIAL: '/home/samnewby218/samnewby.ca/samnewbysite-276377812e2a.json'
+
+handlers:
+  # Serve all static files with urls ending with a file extension
+- url: /(.*\..+)$ 
+  static_files: dist/\1
+  upload: dist/(.*\..+)$
+
+  # catch all handler to index.html
+- url: /.*
+  static_files: dist/index.html
+  upload: dist/index.html

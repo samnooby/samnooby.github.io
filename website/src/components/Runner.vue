@@ -8,7 +8,7 @@
     <v-row>
       <v-col>
         <h3 class="text-center">{{ runner.name }}</h3>
-        <p class="text-center">Total ran: {{ runner.total_ran }}km</p>
+        <p class="text-center">Total ran: {{ runner.total_ran }} steps</p>
       </v-col>
     </v-row>
   </v-container>

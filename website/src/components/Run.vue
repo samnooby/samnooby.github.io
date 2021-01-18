@@ -9,9 +9,9 @@
             }}
           </h3>
           <h3 class="indigo--text text--lighten-4">
-            <span style="text-decoration: underline;">Distance:</span><br />{{
+            <span style="text-decoration: underline;">Steps:</span><br />{{
               run.Distance
-            }}km
+            }} steps
           </h3>
         </div>
         <div class="d-flex justify-end">

@@ -2,7 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 const axios = require("axios");
-const BASE_URL = "http://localhost:8888/";
+const BASE_URL = "https://api-dot-samnewbysite.uk.r.appspot.com/";
 
 Vue.use(Vuex);
 

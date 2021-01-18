@@ -6,10 +6,10 @@
           Michelles Running challenge
         </h1>
         <h2 class="indigo--text text--lighten-4">
-          {{ $store.state.total_ran }}km out of {{ $store.state.goal }}km
+          {{ $store.state.total_ran }} steps out of {{ $store.state.goal }} steps
         </h2>
         <h2 class="indigo--text text--lighten-4">
-          Only {{ $store.state.goal - $store.state.total_ran }}kms left!!
+          Only {{ $store.state.goal - $store.state.total_ran }} steps to go!!
         </h2>
         <v-progress-linear
           :value="$store.getters.percentToGoal"
@@ -88,7 +88,6 @@
               ref="dialog"
               v-model="show_date_menu"
               persistent
-              return-value.sync="date"
               width="290px"
             >
               <template v-slot:activator="{ on, attrs }">
@@ -148,7 +147,7 @@ export default {
   data() {
     return {
       new_run_length: 0,
-      date: new Date().toLocaleDateString(),
+      date: new Date().toISOString().substring(0, 10),
       show_date_menu: false,
       show_add_runner: false,
       runner_name: "",
@@ -185,7 +184,7 @@ export default {
         Date: new_run_date,
         Distance: float_run_length,
       });
-      this.date = new Date().toLocaleDateString();
+      this.date = new Date().toISOString().substring(0, 10);
     },
     NewRunner() {
       this.show_add_runner = false;

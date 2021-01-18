@@ -1,6 +1,10 @@
 from flask import Flask
 from flask_restful import Api
 from flask_cors import CORS
+import sys
+
+print(sys.version)
+
 from Running.MomRunning import RunnerRoute, RunRoute,\
     DeleteRunRoute
 import os

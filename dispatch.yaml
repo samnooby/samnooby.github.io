@@ -1,0 +1,16 @@
+dispatch:
+  # Default service serves simple hostname request.
+  - url: "newbys.ca/*"
+    service: website
+
+  # Default service serves simple hostname request.
+  - url: "www.newbys.ca/*"
+    service: website
+
+  # Default service serves simple hostname request.
+  - url: "www.api.newbys.ca/*"
+    service: api
+
+  # Send all mobile traffic to the mobile frontend.
+  - url: "api.newbys.ca/*"
+    service: api
