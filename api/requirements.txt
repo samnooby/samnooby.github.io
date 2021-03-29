@@ -1,5 +1,0 @@
-flask==1.1.2
-flask-restful==0.3.8
-flask-cors==3.0.10
-GoogleAppEngineCloudStorageClient==1.9.22.1
-google-cloud-storage==1.35.0
