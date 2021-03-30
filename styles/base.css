@@ -1,6 +1,6 @@
 @font-face {
     font-family: TerminusFont;
-    src: url("Terminus.woff") format("woff");
+    src: url("font/Terminus.woff") format("woff");
 }
 
 @keyframes icon_hover {
