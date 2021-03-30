@@ -1,0 +1,99 @@
+@font-face {
+    font-family: TerminusFont;
+    src: url("Terminus.woff") format("woff");
+}
+
+body {
+    background-color: #1C1D26;
+    color: #50FA7B;
+    margin: 0;
+    padding: 0;
+    font-family: TerminusFont;
+}
+
+/* Header */
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #323444;
+    height: 100px;
+    width: 100%;
+}
+
+header h1 {
+    padding: 0;
+    margin: auto;
+    font-family: TerminusFont;
+    font-size: 48pt;
+}
+
+header img {
+    position: absolute;
+    top: 35%;
+    right: 5px;
+    width: 50px;
+}
+
+/* Main Content */
+section {
+    margin-left: 50px;
+    margin-top: 40px;
+}
+
+.command {
+    font-size: 16pt;
+}
+
+.response {
+    font-size: 24pt;
+    margin-left: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+    .response {
+        font-size: 18pt;
+        margin-left: 10px;
+    }
+    section {
+        margin-left: 10px;
+    }
+  }
+
+#nav-menu {
+    display: flex;
+    justify-content: space-around;
+    font-size: 24pt;
+}
+
+#nav-icon {
+    display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+    #nav-container {
+        display: none;
+    }
+    #nav-icon {
+        display: flex;
+        margin-right: 20px;
+    }
+}
+
+section {
+    position: relative;
+}
+
+section img {
+    width: 400px;
+}
+
+@media only screen and (min-width: 1550px) {
+    section img {
+        display:flex;
+        position: absolute;
+        right: 300px;
+        top: 0px;
+    }
+}
