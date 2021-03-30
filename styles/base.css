@@ -1,0 +1,98 @@
+@font-face {
+    font-family: TerminusFont;
+    src: url("Terminus.woff") format("woff");
+}
+
+@keyframes icon_hover {
+    0% {transform: rotate(0)}
+    15% {transform: rotate(5deg)}
+    30% {transform: rotate(0)}
+    45% {transform: rotate(-5deg)}
+    60% {transform: rotate(0)}
+    75% {transform: rotate(5deg)}
+    80% {transform: rotate(0)}
+    90% {transform: rotate(-5deg)}
+    100% {transform: rotate(0)}
+}
+
+/* Default values */
+body {
+    background-color: #1C1D26;
+    color: #50FA7B;
+    margin: 0;
+    padding: 0;
+    font-family: TerminusFont;
+}
+
+a {
+    text-decoration: none;
+    color: #50FA7B;
+}
+
+
+
+/* Header */
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #323444;
+    height: 100px;
+    width: 100%;
+}
+
+header h1 {
+    padding: 0;
+    margin: auto;
+    font-family: TerminusFont;
+    font-size: 48pt;
+}
+
+header img {
+    position: absolute;
+    top: 35%;
+    right: 5px;
+    width: 50px;
+}
+
+/* Mobile navigation menu */
+#nav-icon {
+    display: none;
+}
+
+#mobile-nav-menu {
+    background-color: #1C1D26;
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    border: 2px solid #50FA7B;
+    visibility: hidden;
+    z-index: 2;
+}
+
+#mobile-nav-menu ul {
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    list-style: none;
+}
+
+/* Elements with animations */
+#mobile-nav-menu li:hover {
+    animation-name: icon_hover;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+}
+
+/* CSS for medium and smaller sized screens */
+@media only screen and (max-width: 1000px) {
+    #nav-container {
+        display: none;
+    }
+    #nav-icon {
+        display: flex;
+        margin-right: 20px;
+    }
+}
