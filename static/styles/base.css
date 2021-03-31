@@ -1,6 +1,6 @@
 @font-face {
     font-family: TerminusFont;
-    src: url("font/Terminus.woff") format("woff");
+    src: url("../assets/font/Terminus.woff") format("woff");
 }
 
 @keyframes icon_hover {
@@ -15,7 +15,7 @@
     100% {transform: rotate(0)}
 }
 
-/* Default values */
+/* The default styles for the page */
 body {
     background-color: #1C1D26;
     color: #50FA7B;
@@ -26,12 +26,10 @@ body {
 
 a {
     text-decoration: none;
-    color: #50FA7B;
+    color: #50FA7B
 }
 
-
-
-/* Header */
+/* Styles for the header */
 header {
     position: relative;
     display: flex;
@@ -55,6 +53,9 @@ header img {
     right: 5px;
     width: 50px;
 }
+
+/* Header styling for the mobile size */
+
 
 /* Mobile navigation menu */
 #nav-icon {
@@ -95,4 +96,15 @@ header img {
         display: flex;
         margin-right: 20px;
     }
+}
+
+/* Container for the content */
+section {
+    margin-left: 50px;
+    margin-top: 40px;
+    position: relative;
+}
+
+section p {
+    font-size: 16pt;
 }

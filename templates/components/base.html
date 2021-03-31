@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Samuel Newby</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href={{.Stylesheet}}>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <header>
+        <h1>NewbyS</h1>
+        <img src="assets/menu.svg" alt="The navigation menu" id="nav-icon" />
+        <div id="mobile-nav-menu">
+            <ul>
+                <li>
+                    <p><a href="html/about.html">About</a></p>
+                </li>
+                <li>
+                    <p><a href="html/resume.html">Resume</a></p>
+                </li>
+                <li>
+                    <p><a href="html/projects.html">Projects</a></p>
+                </li>
+                <li>
+                    <p><a href="html/dotfiles.html">Dotfiles</a></p>
+                </li>
+                <li>
+                    <p><a href="html/contact.html">Contact</a></p>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section>
+        {{.Content}}
+    </section>
+    <script src="js/base.js"></script>
+    <script src={{.Javascript}}></script>
+</body>
+
+</html>

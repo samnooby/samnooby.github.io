@@ -1,3 +1,4 @@
+/* Typing and entering animations */
 @keyframes typing {
     from {width: 0;}
     to {width: 10em}
@@ -13,56 +14,6 @@
     100% {opacity: 1;}
 }
 
-/* Main Content */
-section {
-    margin-left: 50px;
-    margin-top: 40px;
-    position: relative;
-}
-
-section img {
-    width: 400px;
-    opacity: 0;
-    animation: response .2s linear 1.2s 1 normal forwards;
-}
-
-section p {
-    font-size: 16pt;
-}
-
-.command-date {
-    margin-bottom: 0;
-}
-
-.response {
-    font-size: 24pt;
-    margin-left: 25px;
-    color: #ffffff
-}
-
-#nav-menu {
-    display: flex;
-    justify-content: space-around;
-    font-size: 24pt;
-}
-
-#nav-menu div {
-    display: flex;
-}
-
-.nav-menu-item {
-    padding-left: 10px;
-}
-
-
-
-.nav-menu-item:hover {
-    animation-name: icon_hover;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    cursor: pointer;
-}
-
 #show-name {
     display: inline-block;
     overflow: hidden;
@@ -75,6 +26,12 @@ section p {
 }
 
 #name {
+    opacity: 0;
+    animation: response .2s linear 1.2s 1 normal forwards;
+}
+
+#portrait {
+    width: 400px;
     opacity: 0;
     animation: response .2s linear 1.2s 1 normal forwards;
 }
@@ -114,14 +71,33 @@ section p {
     caret .6s linear 2.6s 3;
 }
 
+/* The navigation buttons on the site */
 #nav-menu {
     opacity: 0;
     animation: response .2s linear 4.5s 1 normal forwards;
+    display: flex;
+    justify-content: space-around;
+    font-size: 24pt;
+}
+
+#nav-menu div {
+    display: flex;
+}
+
+.nav-menu-item {
+    padding-left: 10px;
+}
+
+.nav-menu-item:hover {
+    animation-name: icon_hover;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
 }
 
 /* CSS for large sized screens */
 @media only screen and (min-width: 1550px) {
-    section img {
+    #portrait {
         display:flex;
         position: absolute;
         right: 300px;
@@ -140,4 +116,3 @@ section p {
         margin-left: 10px;
     }
   }
-
