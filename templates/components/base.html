@@ -4,7 +4,7 @@
 <head>
     <title>Samuel Newby</title>
     <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href={{.Stylesheet}}>
+    {{.Stylesheets}}
     <meta charset="UTF-8">
 </head>
 
@@ -15,19 +15,19 @@
         <div id="mobile-nav-menu">
             <ul>
                 <li>
-                    <p><a href="html/about.html">About</a></p>
+                    <p><a href="about">About</a></p>
                 </li>
                 <li>
-                    <p><a href="html/resume.html">Resume</a></p>
+                    <p><a href="resume">Resume</a></p>
                 </li>
                 <li>
-                    <p><a href="html/projects.html">Projects</a></p>
+                    <p><a href="projects">Projects</a></p>
                 </li>
                 <li>
-                    <p><a href="html/dotfiles.html">Dotfiles</a></p>
+                    <p><a href="dotfiles">Dotfiles</a></p>
                 </li>
                 <li>
-                    <p><a href="html/contact.html">Contact</a></p>
+                    <p><a href="contact">Contact</a></p>
                 </li>
             </ul>
         </div>
@@ -36,7 +36,7 @@
         {{.Content}}
     </section>
     <script src="js/base.js"></script>
-    <script src={{.Javascript}}></script>
+    {{.Javascripts}}
 </body>
 
 </html>
