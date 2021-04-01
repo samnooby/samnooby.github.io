@@ -1,0 +1,1 @@
+console.log("Projects page scripts loaded")
