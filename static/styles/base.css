@@ -15,6 +15,22 @@
     100% {transform: rotate(0)}
 }
 
+/* Typing and entering animations */
+@keyframes typing {
+    from {width: 0;}
+    to {width: 10em}
+}
+
+@keyframes caret {
+    from, to {border-color: transparent;}
+    50% {border-color: #50FA7B;}
+}
+
+@keyframes response {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
 /* The default styles for the page */
 body {
     background-color: #1C1D26;
@@ -56,6 +72,22 @@ header img {
 
 /* Header styling for the mobile size */
 
+
+/* Mobile navigation menu */
+#navigation-date {
+    opacity: 0;
+    animation: response .2s linear 0s 1 normal forwards;
+}
+
+#show-navigation {
+    width: 0;
+    overflow: hidden;
+    margin: 0;
+    border-right: 2px solid transparent;
+    white-space: nowrap;
+    animation: typing 3s linear 0s 1 normal forwards,
+    caret .6s linear 0s 3;
+}
 
 /* Mobile navigation menu */
 #nav-icon {
@@ -107,4 +139,33 @@ section {
 
 section p {
     font-size: 16pt;
+}
+
+/* The navigation buttons on the site */
+#nav-menu {
+    margin-top: 50px;
+    opacity: 0;
+    animation: response .2s linear 2s 1 normal forwards;
+    display: flex;
+    justify-content: space-around;
+    font-size: 24pt;
+}
+
+#nav-menu div {
+    display: flex;
+}
+
+.nav-menu-item {
+    padding-left: 10px;
+}
+
+.nav-menu-item:hover {
+    animation-name: icon_hover;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+}
+
+.date {
+    margin: 0;
 }

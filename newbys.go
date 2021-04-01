@@ -97,5 +97,5 @@ func main() {
 	http.Handle("/assets/", fileServer)
 	http.Handle("/js/", fileServer)
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":8000", nil))
 }
