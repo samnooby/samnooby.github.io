@@ -1,0 +1,15 @@
+#not-found {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#puzzled-img {
+    width: 150px;
+}
+
+#not-found div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
