@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready() {
     var typing_animation = {
         width: '10em'
     }
@@ -48,6 +48,6 @@ $(function () {
     expire_time.setTime(expire_time.getTime() + (30 * 60000))
 
     document.cookie = "visited=true; secure; expires=" + expire_time.toUTCString()
-});
+};
 
 console.log("Loaded home page javascript")
