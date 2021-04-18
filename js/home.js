@@ -1,4 +1,4 @@
-$(document).ready() {
+$(document).ready(function () {
     var typing_animation = {
         width: '10em'
     }
@@ -24,7 +24,7 @@ $(document).ready() {
                 })
             })
         })
-    } else if (cookie.split("=")[0] == "visited" && cookie.split("=")[1] == "true"){
+    } else if (cookie.split("=")[0] == "visited" && cookie.split("=")[1] == "true") {
         $("#show-name").addClass("typed")
         $("#show-name").animate(typing_animation, 1700)
         $("#portrait").animate(respone_animation, 600)
@@ -48,6 +48,6 @@ $(document).ready() {
     expire_time.setTime(expire_time.getTime() + (30 * 60000))
 
     document.cookie = "visited=true; secure; expires=" + expire_time.toUTCString()
-};
+});
 
 console.log("Loaded home page javascript")
