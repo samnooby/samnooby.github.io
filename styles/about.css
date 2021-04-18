@@ -1,0 +1,42 @@
+#response {
+    margin-left: 25px;
+}
+
+#response h2 {
+    text-align: center;
+}
+
+#portrait {
+    width: 400px;
+}
+
+#school-response {
+    display: flex;
+    margin-right: 200px;
+    width: 100%;
+}
+
+#school-response div {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+#about-command {
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    white-space: nowrap;
+    border-right: 1px solid transparent;
+}
+
+@media only screen and (max-width: 1012px) {
+    #school-response div {
+        margin-left: 0;
+    }
+    #school-response {
+        flex-direction: column;
+    }
+  }

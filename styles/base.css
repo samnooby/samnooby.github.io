@@ -15,6 +15,25 @@
     100% {transform: rotate(0)}
 }
 
+@keyframes caret {
+    from, to {border-color: transparent;}
+    50% {border-color: #50FA7B;}
+}
+
+.typed {
+    animation: 
+        caret .45s linear 0s 2;;
+}
+
+.hidden-typed {
+    width: 0;
+}
+
+.hidden-response {
+    opacity: 0;
+}
+
+
 /* The default styles for the page */
 body {
     background-color: #1C1D26;
@@ -107,4 +126,33 @@ section {
 
 section p {
     font-size: 16pt;
+}
+
+#show-navigation {
+    overflow: hidden;
+    margin: 0;
+    border-right: 2px solid transparent;
+    white-space: nowrap;
+}
+
+/* The navigation buttons on the site */
+#nav-menu {
+    display: flex;
+    justify-content: space-around;
+    font-size: 24pt;
+}
+
+#nav-menu div {
+    display: flex;
+}
+
+.nav-menu-item {
+    padding-left: 10px;
+}
+
+.nav-menu-item:hover {
+    animation-name: icon_hover;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
 }
