@@ -91,11 +91,23 @@ header img {
     z-index: 2;
 }
 
+#mobile-nav-menu {
+    font-size: 28pt;
+}
+
 #mobile-nav-menu ul {
+    text-align: center;
     margin: 0;
     padding-left: 10px;
     padding-right: 10px;
     list-style: none;
+}
+
+#mobile-nav-menu li {
+    border-top: 1px solid #50FA7B;
+    border-bottom: 1px solid #50FA7B;
+    padding: 0;
+    margin: 0;
 }
 
 /* Elements with animations */
@@ -104,6 +116,8 @@ header img {
     animation-duration: 2s;
     animation-iteration-count: infinite;
     cursor: pointer;
+    border-top: hidden;
+    border-bottom: hidden;
 }
 
 /* CSS for medium and smaller sized screens */
