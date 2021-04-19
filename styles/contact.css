@@ -1,0 +1,24 @@
+#contact-command {
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    white-space: nowrap;
+    border-right: 1px solid transparent;
+}
+
+#show-contact {
+    text-align: center;
+}
+
+/* #contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 24pt;
+} */
+
+iframe {
+    display: block;
+    margin: 0 auto;
+}
