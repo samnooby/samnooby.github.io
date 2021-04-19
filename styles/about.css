@@ -8,7 +8,9 @@
 }
 
 #portrait {
+    margin-top: 100px;
     width: 400px;
+    height: 400px;
 }
 
 #school-response {
@@ -42,5 +44,6 @@
     }
     #portrait {
         width: 300px;
+        height: 300px;
     }
   }

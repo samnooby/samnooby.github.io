@@ -40,7 +40,7 @@
     #portrait {
         display:flex;
         position: absolute;
-        right: 300px;
+        right: 150px;
         top: 0px;
     }
 }
@@ -53,5 +53,9 @@
     }
     section {
         margin-left: 10px;
+    }
+    #portrait {
+        width: 100%;
+        height: auto;
     }
   }
