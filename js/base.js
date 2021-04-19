@@ -10,7 +10,7 @@ function setUpNavMenu() {
         mobile_nav_menu.style.visibility = (current_visibility == "hidden") ? "visible":"hidden"
         setTimeout(() => {
             mobile_nav_menu.style.visibility = "hidden"
-        }, 4000);
+        }, 5000);
     }
 }
 
