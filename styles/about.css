@@ -1,5 +1,6 @@
 #response {
-    margin-left: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 #response h2 {
@@ -38,5 +39,8 @@
     }
     #school-response {
         flex-direction: column;
+    }
+    #portrait {
+        width: 300px;
     }
   }

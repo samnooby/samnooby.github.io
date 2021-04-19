@@ -8,6 +8,9 @@ function setUpNavMenu() {
     nav_icon.onclick = function () {
         const current_visibility = mobile_nav_menu.style.visibility.toString()
         mobile_nav_menu.style.visibility = (current_visibility == "hidden") ? "visible":"hidden"
+        setTimeout(() => {
+            mobile_nav_menu.style.visibility = "hidden"
+        }, 4000);
     }
 }
 
