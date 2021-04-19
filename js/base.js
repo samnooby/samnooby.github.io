@@ -14,5 +14,13 @@ function setUpNavMenu() {
     }
 }
 
-setUpNavMenu()
-console.log("Loaded base javascript...")
+window.addEventListener('load', function() {
+    $(document).ready(function () {
+        
+        setUpNavMenu()
+        var today = new Date()
+        $(".command-date").text(today.getDate() + "/" + today.getMonth() + "/" + today.getFullYear())
+        
+        console.log("Loaded base javascript")
+    })
+    });    

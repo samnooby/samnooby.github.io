@@ -179,3 +179,8 @@ section p {
     animation-iteration-count: infinite;
     cursor: pointer;
 }
+
+.command-date {
+    margin: 0;
+    margin-top: 10px;
+}
