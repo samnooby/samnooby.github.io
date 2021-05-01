@@ -1,0 +1,34 @@
+#projects-command {
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    white-space: nowrap;
+    border-right: 1px solid transparent;
+}
+
+#project-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    opacity: 0;
+}
+
+#project-container div {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 1200px) {
+    #project-container {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    #project-container {
+        grid-template-columns: 100%;
+    }
+}
